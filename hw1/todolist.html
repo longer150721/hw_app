@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>To do list!</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="sidebar.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+</head>
+<body>
+<div class="wrapper jsc-sidebar-content jsc-sidebar-pulled">
+    <div> <a href="#" class="icon-menu link-menu jsc-sidebar-trigger" style="font-family: '黑体';">三</a> </div>
+    <div class="main-content">
+        <h1 class="headline"><span class="headline-main">Lanciy's </span>to do list</h1>
+        <p>这是一个很傻逼的app</p>
+        <p>请点击左上角的按钮</p>
+    </div>
+</div>
+
+
+<div class="sidebar jsc-sidebar" id="jsi-nav">
+    <ul class="sidebar-list">
+        <li><a href="#">备忘录一</a></li>
+        <li><a href="#">备忘录二</a></li>
+        <li><a href="#">备忘录三</a></li>
+        <li><a href="#">备忘录四</a></li>
+        <li><a href="#">备忘录五</a></li>
+    </ul>
+</div>
+<script>
+    $('#jsi-nav').sidebar({
+        trigger: '.jsc-sidebar-trigger'
+    });
+</script>
+</body>
+</html>
