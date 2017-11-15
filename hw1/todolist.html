@@ -15,28 +15,67 @@
 </head>
 <body>
 <div class="wrapper jsc-sidebar-content jsc-sidebar-pulled">
-    <div> <a href="#" class="icon-menu link-menu jsc-sidebar-trigger" style="font-family: '黑体';">三</a> </div>
+    <div> <a href="javascript:ChangeSide('side')" class="icon-menu link-menu jsc-sidebar-trigger" style="font-family: '黑体';" id="side">┚</a></div>
     <div class="main-content">
-        <h1 class="headline"><span class="headline-main">Lanciy's </span>to do list</h1>
-        <p>这是一个很傻逼的app</p>
-        <p>请点击左上角的按钮</p>
+        <h1 class="headline"id="head"><span class="headline-main">Lanciy's </span>to do list</h1>
+        <p id="part1">这是一个很傻逼的app</p>
+        <p id="part2">请点击左上角的按钮</p>
     </div>
+
 </div>
 
 
 <div class="sidebar jsc-sidebar" id="jsi-nav">
     <ul class="sidebar-list">
-        <li><a href="#">备忘录一</a></li>
-        <li><a href="#">备忘录二</a></li>
-        <li><a href="#">备忘录三</a></li>
-        <li><a href="#">备忘录四</a></li>
-        <li><a href="#">备忘录五</a></li>
+        <li><span style="float:right"><a href="#" id="a1" >Done✔</a></span></li>
+        <li><a href="javascript:Goto_search('1')">Lib One</a></li>
+        <li><span style="float:right"><a href="#" id="a2" >Done✔</a></span></li>
+        <li><a href="javascript:Goto_search('2')">Lib Two</a></li>
+        <li><span style="float:right"><a href="#" id="a3" >Done✔</a></span></li>
+        <li><a href="javascript:Goto_search('3')">Lib Three</a></li>
+        <li><span style="float:right"><a href="javascript:ChangeFont('a4')" id="a4" >Wait✘</a></span></li>
+        <li><a href="#">Lib Four</a></li>
+        <li><span style="float:right"><a href="javascript:ChangeFont('a5')" id="a5" >Wait✘</a></span></li>
+        <li><a href="#">Lib Five</a></li>
+        </br>
+        <li><a href="javascript:Goto_search('-1')">Home</a></li>
     </ul>
 </div>
-<script>
+<script type="text/javascript">
+    function ChangeFont(obj) {
+        if (document.getElementById(obj).innerHTML == "Done✔"){
+            document.getElementById(obj).innerHTML = "Wait✘";
+        } else{
+            document.getElementById(obj).innerHTML = "Done✔";}
+    }
+
+    function Goto_search(number) {
+        if (number == 1) {
+            document.getElementById("head").innerHTML = "<span class=\"headline-main\">The lib one has been done</span>";
+            document.getElementById("part1").innerHTML = "Eventual score : 75";
+            document.getElementById("part2").innerHTML = "Max score : 75";
+        }
+        if (number == 2) {
+            document.getElementById("head").innerHTML = "<span class=\"headline-main\">The lib two has been done</span>";
+            document.getElementById("part1").innerHTML = "Phases Defused : 7";
+            document.getElementById("part2").innerHTML = "Explosions : 3";
+        }
+        if (number == 3) {
+            document.getElementById("head").innerHTML = "<span class=\"headline-main\">The lib three has been done</span>";
+            document.getElementById("part1").innerHTML = "Eventual score : 60";
+            document.getElementById("part2").innerHTML = "Max score : 60";
+        }
+        if (number == -1) {
+            document.getElementById("head").innerHTML = "<span class=\"headline-main\">Lanciy's </span>to do list";
+            document.getElementById("part1").innerHTML = "这是一个很傻逼的app";
+            document.getElementById("part2").innerHTML = "请点击左上角的按钮";
+        }
+    }
+
     $('#jsi-nav').sidebar({
         trigger: '.jsc-sidebar-trigger'
     });
 </script>
+
 </body>
 </html>
